@@ -33,9 +33,9 @@ public class Switch : MonoBehaviour
             || SteamVR_Actions._default.SnapTurnRight.GetStateDown(SteamVR_Input_Sources.Any))
             index+=1;
 
-        if(index > 2)
+        if(index > background.Length)
         {
-            index = 2;
+            index = background.Length;
         }
 
         if(index < 0)

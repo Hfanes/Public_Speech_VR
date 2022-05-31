@@ -55,6 +55,10 @@ namespace Valve.VR
         
         private static SteamVR_Action_Pose p_mixedreality_ExternalCamera;
         
+        private static SteamVR_Action_Vector2 p_publicspeech_trackpadPos;
+        
+        private static SteamVR_Action_Boolean p_publicspeech_clickTrackpad;
+        
         public static SteamVR_Action_Boolean default_InteractUI
         {
             get
@@ -207,6 +211,22 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Vector2 publicspeech_trackpadPos
+        {
+            get
+            {
+                return SteamVR_Actions.p_publicspeech_trackpadPos.GetCopy<SteamVR_Action_Vector2>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean publicspeech_clickTrackpad
+        {
+            get
+            {
+                return SteamVR_Actions.p_publicspeech_clickTrackpad.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         private static void InitializeActionArrays()
         {
             Valve.VR.SteamVR_Input.actions = new Valve.VR.SteamVR_Action[] {
@@ -228,7 +248,9 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Throttle,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.mixedreality_ExternalCamera};
+                    SteamVR_Actions.mixedreality_ExternalCamera,
+                    SteamVR_Actions.publicspeech_trackpadPos,
+                    SteamVR_Actions.publicspeech_clickTrackpad};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
                     SteamVR_Actions.default_InteractUI,
                     SteamVR_Actions.default_Teleport,
@@ -247,7 +269,9 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Throttle,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.mixedreality_ExternalCamera};
+                    SteamVR_Actions.mixedreality_ExternalCamera,
+                    SteamVR_Actions.publicspeech_trackpadPos,
+                    SteamVR_Actions.publicspeech_clickTrackpad};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.default_Haptic};
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[] {
@@ -265,13 +289,15 @@ namespace Valve.VR
                     SteamVR_Actions.default_SnapTurnRight,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
-                    SteamVR_Actions.buggy_Reset};
+                    SteamVR_Actions.buggy_Reset,
+                    SteamVR_Actions.publicspeech_clickTrackpad};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
                     SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.buggy_Steering};
+                    SteamVR_Actions.buggy_Steering,
+                    SteamVR_Actions.publicspeech_trackpadPos};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
             Valve.VR.SteamVR_Input.actionsSkeleton = new Valve.VR.SteamVR_Action_Skeleton[] {
                     SteamVR_Actions.default_SkeletonLeftHand,
@@ -290,7 +316,9 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Steering,
                     SteamVR_Actions.buggy_Throttle,
                     SteamVR_Actions.buggy_Brake,
-                    SteamVR_Actions.buggy_Reset};
+                    SteamVR_Actions.buggy_Reset,
+                    SteamVR_Actions.publicspeech_trackpadPos,
+                    SteamVR_Actions.publicspeech_clickTrackpad};
         }
         
         private static void PreInitActions()
@@ -314,6 +342,8 @@ namespace Valve.VR
             SteamVR_Actions.p_buggy_Brake = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Brake")));
             SteamVR_Actions.p_buggy_Reset = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Reset")));
             SteamVR_Actions.p_mixedreality_ExternalCamera = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/mixedreality/in/ExternalCamera")));
+            SteamVR_Actions.p_publicspeech_trackpadPos = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/publicspeech/in/trackpadPos")));
+            SteamVR_Actions.p_publicspeech_clickTrackpad = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/publicspeech/in/clickTrackpad")));
         }
     }
 }

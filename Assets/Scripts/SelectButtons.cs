@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.Extras;
+using Valve.VR.InteractionSystem;
 
 public class SelectButtons : MonoBehaviour
 {
@@ -10,6 +12,11 @@ public class SelectButtons : MonoBehaviour
     public GameObject DiapositivosIA;
     public GameObject DiapositivosBurnout;
 
+    public GameObject DiapositivosJogosFrente;
+    public GameObject DiapositivosIAFrente;
+    public GameObject DiapositivosBurnoutFrente;
+
+    public GameObject _playerleftHand;
 
 
 
@@ -20,11 +27,18 @@ public class SelectButtons : MonoBehaviour
         DiapositivosJogos.SetActive(false);
         DiapositivosIA.SetActive(false);
         DiapositivosBurnout.SetActive(false);
+        DiapositivosJogosFrente.SetActive(false);
+        DiapositivosIAFrente.SetActive(false);
+        DiapositivosBurnoutFrente.SetActive(false);
+
     }
     public void VideoJogos()
     {
         canvasMenuEscolha.SetActive(false);
         DiapositivosJogos.SetActive(true);
+        DiapositivosJogosFrente.SetActive(true);
+        _playerleftHand.GetComponent<SteamVR_LaserPointer>().enabled = false;
+
 
     }
 
@@ -32,6 +46,9 @@ public class SelectButtons : MonoBehaviour
     {
         canvasMenuEscolha.SetActive(false);
         DiapositivosIA.SetActive(true);
+        DiapositivosIAFrente.SetActive(true);
+        _playerleftHand.GetComponent<SteamVR_LaserPointer>().enabled = false;
+
 
     }
 
@@ -39,6 +56,8 @@ public class SelectButtons : MonoBehaviour
     {
         canvasMenuEscolha.SetActive(false);
         DiapositivosBurnout.SetActive(true);
+        DiapositivosBurnoutFrente.SetActive(true);
+        _playerleftHand.GetComponent<SteamVR_LaserPointer>().enabled = false;
 
     }
 }

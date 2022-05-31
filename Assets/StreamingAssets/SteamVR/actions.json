@@ -81,6 +81,14 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
+    },
+    {
+      "name": "/actions/publicspeech/in/trackpadPos",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/publicspeech/in/clickTrackpad",
+      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -98,6 +106,10 @@
     },
     {
       "name": "/actions/mixedreality",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/publicspeech",
       "usage": "single"
     }
   ],
@@ -169,7 +181,9 @@
       "/actions/default/out/Haptic": "Haptic",
       "/actions/platformer/in/Jump": "Jump",
       "/actions/default/in/SnapTurnLeft": "Snap Turn (Left)",
-      "/actions/default/in/SnapTurnRight": "Snap Turn (Right)"
+      "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
+      "/actions/publicspeech/in/trackpadPos": "Trackpad Position",
+      "/actions/publicspeech/in/clickTrackpad": "Click Trackpad"
     }
   ]
 }

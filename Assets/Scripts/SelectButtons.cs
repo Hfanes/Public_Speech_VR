@@ -17,6 +17,7 @@ public class SelectButtons : MonoBehaviour
     public GameObject DiapositivosBurnoutFrente;
 
     public GameObject _playerleftHand;
+    public GameObject sons;
 
 
 
@@ -30,6 +31,9 @@ public class SelectButtons : MonoBehaviour
         DiapositivosJogosFrente.SetActive(false);
         DiapositivosIAFrente.SetActive(false);
         DiapositivosBurnoutFrente.SetActive(false);
+        sons.SetActive(false);
+
+
 
     }
     public void VideoJogos()
@@ -38,6 +42,8 @@ public class SelectButtons : MonoBehaviour
         DiapositivosJogos.SetActive(true);
         DiapositivosJogosFrente.SetActive(true);
         _playerleftHand.GetComponent<SteamVR_LaserPointer>().enabled = false;
+        sons.SetActive(true);
+
 
 
     }
@@ -48,6 +54,8 @@ public class SelectButtons : MonoBehaviour
         DiapositivosIA.SetActive(true);
         DiapositivosIAFrente.SetActive(true);
         _playerleftHand.GetComponent<SteamVR_LaserPointer>().enabled = false;
+        sons.SetActive(true);
+
 
 
     }
@@ -58,6 +66,8 @@ public class SelectButtons : MonoBehaviour
         DiapositivosBurnout.SetActive(true);
         DiapositivosBurnoutFrente.SetActive(true);
         _playerleftHand.GetComponent<SteamVR_LaserPointer>().enabled = false;
+        sons.SetActive(true);
+
 
     }
 }

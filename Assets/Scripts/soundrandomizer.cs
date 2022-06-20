@@ -12,16 +12,6 @@ public class soundrandomizer : MonoBehaviour
         StartCoroutine(RandomNoise());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if(Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    source.clip = sounds[Random.Range(0, sounds.Length)];   
-        //    source.PlayOneShot(source.clip);
-        //}
-    }
-
     IEnumerator RandomNoise()
     {
         while (true)
@@ -29,7 +19,7 @@ public class soundrandomizer : MonoBehaviour
             int index = Random.Range(0, 5);
             source.PlayOneShot(sounds[index]);
             yield return new WaitUntil(() => !source.isPlaying);
-            yield return new WaitForSeconds(Random.Range(0f,8f));
+            yield return new WaitForSeconds(Random.Range(0f,5f));
         }
     }
 }

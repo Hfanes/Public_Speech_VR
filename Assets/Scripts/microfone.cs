@@ -5,31 +5,18 @@ using UnityEngine;
 public class microfone : MonoBehaviour
 {
     private AudioClip microphoneClip;
-
-
     public bool _UseMicrophone;
-
     public GameObject speaker;
 
 
     private void Start()
     {
-
         AudioSource microAudioSource = speaker.GetComponent<AudioSource>();
-
-
-        //microAudioSource = GetComponent<AudioSource>();
-
-
-
         //Microfone();
         foreach (var device in Microphone.devices)
         {
             Debug.Log(device);
         }
-
-
-
 
         if(_UseMicrophone)
         {
@@ -46,15 +33,7 @@ public class microfone : MonoBehaviour
                 _UseMicrophone = false;
             }
         }
-        else
-        {
-
-        }
     }
-
-
-
-
 }
 
 

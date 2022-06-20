@@ -17,8 +17,5 @@ public class FollowCamera : MonoBehaviour
         Quaternion newCamRotation = Quaternion.LookRotation(transform.position - cameraTransform.transform.position);
         newCamRotation = Quaternion.Slerp(transform.rotation, newCamRotation, camRotationSpeed * Time.smoothDeltaTime); //spherical lerp smoothing
         transform.rotation = newCamRotation;
-
-
-
     }
 }
